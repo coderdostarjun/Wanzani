@@ -29,6 +29,13 @@ class OnboardingScreen2 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
+                    width: 10,
+                    height: 8,
+                    child: CircleAvatar(backgroundColor:Color(0xffd1d5db),
+                    ),
+                  ),
+                  SizedBox(width: 3,),
+                  Container(
                     height: 8,
                     width: MediaQuery.of(context).size.width/12,
                     decoration:BoxDecoration(
@@ -37,13 +44,6 @@ class OnboardingScreen2 extends StatelessWidget {
                           color: Color(0xff00B0E7),
                         ),
                         borderRadius: BorderRadius.circular(6)
-                    ),
-                  ),
-                  SizedBox(width: 3,),
-                  Container(
-                    width: 10,
-                    height: 8,
-                    child: CircleAvatar(backgroundColor:Color(0xffd1d5db),
                     ),
                   ),
                   SizedBox(width: 3,),

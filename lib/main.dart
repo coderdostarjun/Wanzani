@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wanzani/Screens/auth/login/login_screeen.dart';
 import 'package:wanzani/Screens/onboarding/onboarding_screen_1.dart';
 import 'package:wanzani/Screens/splash/splash_screen.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xffFFFFFF),
       ),
       home: SplashScreen(),
+      // home: LoginScreeen(),
     );
   }
 }
