@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:wanzani/Controllers/createAccount/create_account_screen_controller.dart';
 import 'package:wanzani/Screens/auth/verify_account/verify_account_screen.dart';
 import 'package:wanzani/Screens/onboarding/onboarding_screen_3.dart';
 import 'package:wanzani/consts/colors.dart';
@@ -14,6 +15,7 @@ import '../widget/authinfo.dart';
 
 class CreateAccountScreen extends StatelessWidget {
   CreateAccountScreen({super.key});
+  CreateAccountScreenController controller=Get.put(CreateAccountScreenController());
   TextEditingController firstName = TextEditingController();
   TextEditingController lastName = TextEditingController();
   TextEditingController email = TextEditingController();
@@ -61,11 +63,11 @@ class CreateAccountScreen extends StatelessWidget {
               SizedBox(
                 height: 15.0,
               ),
-              commonTextField1(firstName, "Last Name"),
+              commonTextField1(lastName, "Last Name"),
               SizedBox(
                 height: 15.0,
               ),
-              commonTextField1(firstName, "Email"),
+              commonTextField1(email, "Email",textInputype: TextInputType.emailAddress),
               SizedBox(
                 height: 15.0,
               ),
@@ -74,11 +76,11 @@ class CreateAccountScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    commonTextField1(firstName, "Code", size: 90),
+                    commonTextField1(code, "Code", size: 90,textInputype: TextInputType.number),
                     SizedBox(
                       width: 10,
                     ),
-                    commonTextField1(firstName, "Phone Number", size: 271),
+                    commonTextField1(phoneNumber, "Phone Number", size: 271,textInputype: TextInputType.number),
                   ],
                 ),
               ),
@@ -115,24 +117,19 @@ class CreateAccountScreen extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      border:Border.all(
-                        color: Color(0xffA8B1BE),
-                      )
+              Obx(() => SingleChildScrollView(
+                child: Row(
+                  children: [
+                    Checkbox(
+                      value: controller.isChecked.value,
+                      onChanged: controller.checkUnchek,
                     ),
-                  ),
-                  SizedBox(width:15,),
-                  Text("I agree to the",style: AppTextStyles.withColor(AppTextStyles.interRegular16, Color(0xff808D9E)),),
-                  SizedBox(width: 4,),
-                  Text("Terms and Privacy Policy",style: AppTextStyles.withColor(AppTextStyles.interRegular16, Color(0xff00B0E7)),)
-                ],
-              ),
+                    Text("I agree to the ", style: AppTextStyles.withColor(AppTextStyles.interRegular16, Color(0xff808D9E))),
+                    SizedBox(width: 3,),
+                    Text("Terms and Privacy Policy", style: AppTextStyles.withColor(AppTextStyles.interRegular16, Color(0xff00B0E7))),
+                  ],
+                ),
+              )),
               SizedBox(
                 height: 40,
               ),

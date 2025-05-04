@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wanzani/Common%20Components/AppTextStyles.dart';
+import 'package:wanzani/Screens/home/home_screen.dart';
+import 'package:wanzani/Screens/notification/notification_screen.dart';
+import 'package:wanzani/Screens/setting/setting_screen.dart';
 import 'package:wanzani/consts/colors.dart';
 import 'package:wanzani/consts/images.dart';
+import 'package:get/get.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({super.key});
@@ -93,6 +97,7 @@ class SearchScreen extends StatelessWidget {
                         .copyWith(fontWeight: FontWeight.w500),
                     Color(0xff1F2937))),
           ],
+
         ),
       ),
       bottomNavigationBar: Container(
@@ -100,15 +105,24 @@ class SearchScreen extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            InkWell(child: Image.asset("assets/images/bottomnavHome.png")),
             InkWell(
+                onTap: () => Get.to(() => HomeScreen()),
+                child: Image.asset("assets/images/bottomnavHome.png")),
+            InkWell(
+                onTap: () => Get.to(() => SearchScreen()),
                 child: Image.asset("assets/images/bottomnav_search_blue.png")),
             Container(
                 padding: EdgeInsets.only(bottom: 6),
                 child: InkWell(
+                    onTap: () => {},
                     child: Image.asset("assets/images/bottomnav_blue.png"))),
-            InkWell(child: Image.asset("assets/images/bottomnav_alert.png")),
             InkWell(
+                onTap: () => {
+                      Get.to(() => NotificationScreen()),
+                    },
+                child: Image.asset("assets/images/bottomnav_alert.png")),
+            InkWell(
+              onTap: () => Get.to(() => SettingScreen()),
               child: Image.asset("assets/images/bottomnav_profile.png"),
             ),
           ],

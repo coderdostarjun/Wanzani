@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Common Components/AppTextStyles.dart';
 import '../../../consts/colors.dart';
-Widget commonTextField1(controllerName,hintText,{double? size})
+Widget commonTextField1(controllerName,hintText,{double? size, TextInputType? textInputype})
 {
   return   SizedBox(
     width:size??400,
@@ -24,7 +24,7 @@ Widget commonTextField1(controllerName,hintText,{double? size})
       ),
       style:AppTextStyles.withColor(AppTextStyles.interRegular16,textGray),
       obscureText: false,
-      keyboardType: TextInputType.text,
+      keyboardType: textInputype??TextInputType.text,
     ),
   );
 }

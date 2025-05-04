@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wanzani/Common%20Components/AppTextStyles.dart';
+import 'package:wanzani/Screens/comment/comment_screen.dart';
+import 'package:wanzani/Screens/setting/setting_screen.dart';
 import 'package:wanzani/consts/colors.dart';
 import 'package:wanzani/consts/images.dart';
 
@@ -88,7 +90,9 @@ class CustomUserPosts extends StatelessWidget {
                         Text(controller.userPost[index]["like"],style: TextStyle(fontSize:16,color:Color(0xff6B7280),),),
                         SizedBox(width: 16),
                         Image.asset(chatIcon),
-                        Text(controller.userPost[index]["comment"],style: TextStyle(fontSize:16,color:Color(0xff6B7280),),),
+                        InkWell(
+                          onTap:()=>Get.to(()=>CommentScreen()),
+                            child: Text(controller.userPost[index]["comment"],style: TextStyle(fontSize:16,color:Color(0xff6B7280),),)),
                         Spacer(),
                         Icon(Icons.share,color: Color(0xff6B7280),),
                         SizedBox(width: 4,),

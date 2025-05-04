@@ -24,7 +24,7 @@ class HomeScreenControllers extends GetxController {
       "image": user2,
       "name": "Ahmed",
     }, {
-      "image": user3,
+      "image": "user3",
       "name": "Marie",
     },
     {
