@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wanzani/Controllers/radio/radio_controller.dart';
+import 'package:wanzani/Screens/radio/widgets/trending_name.dart';
 import 'package:wanzani/consts/colors.dart';
 
 import '../../../Common Components/AppTextStyles.dart';
@@ -33,61 +34,21 @@ class RadioTrendingScreens extends StatelessWidget {
                   SizedBox(
                     width: 12.w,
                   ),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: Text("Today",
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        )),
-                  ),
+                  trendingName("Today"),
                   SizedBox(
                     width: 5,
                   ),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: Text("This Week",
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        )),
-                  ),
+                  trendingName("This Week"),
                   SizedBox(
                     width: 5,
                   ),
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: Text("This Month",
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        )),
-                  ),
+                  trendingName("This Month"),
                 ],
               ),
             ),
             SizedBox(
               height: 22,
             ),
-
             //trending radio stations
             Row(
               children: [
@@ -278,53 +239,56 @@ class RadioTrendingScreens extends StatelessWidget {
                         color: Colors.black,
                       ),
                       //music play container
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: Colors.grey.shade800,
-                                  borderRadius: BorderRadius.circular(20),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.shade800,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: const Icon(Icons.music_note),
                                 ),
-                                child: const Icon(Icons.music_note),
-                              ),
-                              const SizedBox(width: 12),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Now Playing',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black,
+                                const SizedBox(width: 12),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Now Playing',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Disco Inferno - The Trammps',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
+                                    Text(
+                                      'Disco Inferno - The Trammps',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(20),
+                                  ],
+                                ),
+                              ],
                             ),
-                            child: const Icon(Icons.play_arrow,
-                                color: Colors.white),
-                          ),
-                        ],
+                            Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Icon(Icons.play_arrow,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -430,6 +394,7 @@ class RadioTrendingScreens extends StatelessWidget {
                       }),
                 ),
 
+
                 //trending radio shows
                 SizedBox(
                   height: 12,
@@ -493,7 +458,7 @@ class RadioTrendingScreens extends StatelessWidget {
                                             ["postText"],
                                         style: TextStyle(
                                             color: Color(0xff999999),
-                                            fontSize: 14,
+                                            fontSize: 14.sp,
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ],
@@ -508,8 +473,8 @@ class RadioTrendingScreens extends StatelessWidget {
                                   children: [
                                     Text(
                                       controller.radioshows[index]["title"],
-                                      style: const TextStyle(
-                                        fontSize: 20,
+                                      style: TextStyle(
+                                        fontSize: 20.sp,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -517,56 +482,59 @@ class RadioTrendingScreens extends StatelessWidget {
                                       controller.radioshows[index]
                                           ["description"],
                                       style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 14.sp,
                                         color: Colors.black,
                                       ),
                                     ),
                                     const SizedBox(height: 8.0),
-                                    Row(
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(
-                                            horizontal: 8.0,
-                                            vertical: 4.0,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: controller.radioshows[index]
-                                                    ["isPremium"]
-                                                ? Colors.purple
-                                                : Colors.green,
-                                            borderRadius:
-                                                BorderRadius.circular(4.0),
-                                          ),
-                                          child: Text(
-                                            controller.radioshows[index]
-                                                    ["isPremium"]
-                                                ? 'PREMIUM'
-                                                : 'FREE',
-                                            style: const TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold,
+                                    SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 8.0,
+                                              vertical: 4.0,
+                                            ),
+                                            decoration: BoxDecoration(
+                                              color: controller.radioshows[index]
+                                                      ["isPremium"]
+                                                  ? Colors.purple
+                                                  : Colors.green,
+                                              borderRadius:
+                                                  BorderRadius.circular(4.0),
+                                            ),
+                                            child: Text(
+                                              controller.radioshows[index]
+                                                      ["isPremium"]
+                                                  ? 'PREMIUM'
+                                                  : 'FREE',
+                                              style: TextStyle(
+                                                fontSize: 12.sp,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        const SizedBox(width: 8.0),
-                                        // Schedule
-                                        Text(
-                                          controller.radioshows[index]
-                                              ["schedule"],
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.black,
+                                       SizedBox(width: 8.0.w),
+                                          // Schedule
+                                          Text(
+                                            controller.radioshows[index]
+                                                ["schedule"],
+                                            style: TextStyle(
+                                              fontSize: 14.sp,
+                                              color: Colors.black,
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                    const SizedBox(height: 8.0),
+                                     SizedBox(height: 8.0.h),
                                     // Views
                                     Row(
                                       children: [
-                                        const Icon(
+                                        Icon(
                                           Icons.visibility,
-                                          size: 16,
+                                          size: 16.sp,
                                           color: Colors.black,
                                         ),
                                         const SizedBox(width: 4.0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wanzani/Screens/auth/create_account/create_account_screen.dart';
 import 'package:wanzani/Screens/auth/login/login_screeen.dart';
 import 'package:wanzani/Screens/onboarding/widgets/onboarding_common_header.dart';
@@ -24,7 +25,7 @@ class OnboardingScreen3 extends StatelessWidget {
                 OnboardingCommonWidget.ImageAvatar(),
                 OnboardingCommonWidget.personalDetail(heading: "Get Started",
                     subHeading: "Create your account or login to start\n   connecting with your community."),
-                SizedBox(height: 50,),
+                SizedBox(height: 40.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -66,6 +67,8 @@ class OnboardingScreen3 extends StatelessWidget {
                 {
                   Get.to(LoginScreeen());
                 },color: Color(0xff14A0DD), btnName: 'Login'),
+                SizedBox(height: 20.h,),
+
               ],
             ),
           ),

@@ -34,7 +34,7 @@ class FeatruedChannelsScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: 18, left: 22, right: 1,bottom: 22),
                         child: Text(
-                          "   Discover our most popular streaming channels with real-time viewer counts and\n            subscription details.",
+                          "   Discover our most popular streaming channels with real-time viewer counts and subscription details.",
                           style: AppTextStyles.withColor(
                               AppTextStyles.interRegular16, Colors.white),
                         ),

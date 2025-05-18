@@ -10,20 +10,6 @@ class RadioHubScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      // appBar: AppBar(
-      //   backgroundColor: backgroundColor,
-      //   title: Center(
-      //     child: Text(
-      //       "RadioHUb",
-      //       style: TextStyle(
-      //         fontSize: 20,
-      //         fontWeight: FontWeight.bold,
-      //         color: Colors.black,
-      //       ),
-      //     ),
-      //   ),
-      // ),
       body: Container(
         margin: EdgeInsets.only(top: 30),
         padding: EdgeInsets.all(5),

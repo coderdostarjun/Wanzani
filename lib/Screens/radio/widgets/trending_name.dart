@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-Widget trendingName()
+Widget trendingName(String name)
 {
   return  Container(
     padding:
@@ -8,7 +8,7 @@ Widget trendingName()
       color: Colors.white,
       borderRadius: BorderRadius.circular(14),
     ),
-    child: Text("Today",
+    child: Text(name,
         style: TextStyle(
           fontSize: 11,
           fontWeight: FontWeight.bold,

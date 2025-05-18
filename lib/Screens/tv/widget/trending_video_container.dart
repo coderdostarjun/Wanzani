@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wanzani/Controllers/tv/tvScreenController.dart';
 
@@ -42,67 +43,67 @@ class TrendingVideoContainer extends StatelessWidget {
                               top: 30,
                               left: 15,
                               right: 15,
-                              child: Row(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.all(3),
-                                    width: MediaQuery
-                                        .of(context)
-                                        .size
-                                        .width / 5,
-                                    height: 34,
-                                    decoration: BoxDecoration(
-                                      color: Colors.red,
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.fiber_manual_record,
-                                            color: Colors.white, size: 20),
-                                        SizedBox(width: 4),
-                                        Text(
-                                          "LIVE",
-                                          style: AppTextStyles.withColor(
-                                            AppTextStyles.interSemiBold24
-                                                .copyWith(fontSize: 20),
-                                            Colors.white,
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(3),
+                                      width: MediaQuery
+                                          .of(context)
+                                          .size
+                                          .width / 5,
+                                      height: 34,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.fiber_manual_record,
+                                              color: Colors.white, size: 20),
+                                          SizedBox(width: 4.w),
+                                          Text(
+                                            "LIVE",
+                                            style: AppTextStyles.withColor(
+                                              AppTextStyles.interSemiBold24
+                                                  .copyWith(fontSize: 20.sp),
+                                              Colors.white,
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  Spacer(),
-                                  Container(
-                                    padding: EdgeInsets.all(4),
-                                    width: MediaQuery
-                                        .of(context)
-                                        .size
-                                        .width / 4.5,
-                                    height: 34,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xff525252),
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Icon(Icons.remove_red_eye,
-                                            color: Colors.white, size: 18),
-                                        SizedBox(width: 4),
-                                        Text(
-                                          "${controller.tredingVideo[index]["viewerCount"]/1000}K",
-                                          // "24.5K",
-                                          style: AppTextStyles.withColor(
-                                            AppTextStyles.interSemiBold24
-                                                .copyWith(fontSize: 18),
-                                            Colors.white,
+                                    Spacer(),
+                                    Container(
+                                      padding: EdgeInsets.all(4),
+                                      width: MediaQuery
+                                          .of(context)
+                                          .size
+                                          .width / 4.5,
+                                      height: 34,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xff525252),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Icon(Icons.remove_red_eye,
+                                              color: Colors.white, size: 18),
+                                          SizedBox(width: 4),
+                                          Text(
+                                            "${controller.tredingVideo[index]["viewerCount"]/1000}K",
+                                            // "24.5K",
+                                            style: AppTextStyles.withColor(
+                                              AppTextStyles.interSemiBold24
+                                                  .copyWith(fontSize: 18),
+                                              Colors.white,
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
+                                  ],
+                                ),
                             ),
                             Positioned(
                               bottom: 15,

@@ -26,7 +26,7 @@ class OnboardingScreen2 extends StatelessWidget {
                 OnboardingCommonWidget.personalDetail(heading: "Discover All Features",
                     subHeading: "Live TV, radio channels, messaging, and a\n       marketplace - all in one app."),
 
-                SizedBox(height: 115.h,),
+                SizedBox(height: 65.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

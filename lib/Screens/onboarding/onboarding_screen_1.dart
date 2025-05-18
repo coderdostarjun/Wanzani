@@ -25,7 +25,7 @@ class OnboardingScreen extends StatelessWidget {
                 OnboardingCommonWidget.ImageAvatar(),
                 OnboardingCommonWidget.personalDetail(heading: "Welcome to Wanzani",subHeading: "Connect with friends, share moments, and\n    discover content that matters to you."),
             
-                SizedBox(height: 115.h,),
+                SizedBox(height: 65.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
