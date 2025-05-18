@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wanzani/Common%20Components/AppTextStyles.dart';
 import 'package:wanzani/Screens/home/home_screen.dart';
+import 'package:wanzani/Screens/home/home_screens.dart';
 import 'package:wanzani/Screens/notification/notification_screen.dart';
 import 'package:wanzani/Screens/setting/setting_screen.dart';
 import 'package:wanzani/consts/colors.dart';
@@ -106,7 +107,7 @@ class SearchScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             InkWell(
-                onTap: () => Get.to(() => HomeScreen()),
+                onTap: () => Get.offAll(() => HomeScreens()),
                 child: Image.asset("assets/images/bottomnavHome.png")),
             InkWell(
                 onTap: () => Get.to(() => SearchScreen()),

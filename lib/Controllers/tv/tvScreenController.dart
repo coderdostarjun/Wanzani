@@ -73,6 +73,50 @@ List tredingVideo=[
   }
 ].obs;
 
+
+List channels=[
+  {
+    'title': 'Sports Central',
+    'subtitle': 'Live Sports Coverage',
+    'network': 'Sports Network',
+    'channelInitial': 'SN',
+    'networkColor': Colors.purple,
+    'airingNow': 'NBA Finals',
+    'isPremium': true,
+    'viewCount': 24500,
+  },
+  {
+    'title': 'World News 24',
+    'subtitle': 'Global News Coverage',
+    'network': 'Global Media',
+    'channelInitial': 'GM',
+    'networkColor': Colors.red,
+    'airingNow': 'Breaking News',
+    'isPremium': false,
+    'viewCount': 16700,
+  },
+  {
+    'title': 'Entertainment Plus',
+    'subtitle': 'Reality Shows & Series',
+    'network': 'EntMedia Group',
+    'channelInitial': 'EG',
+    'networkColor': Colors.purple,
+    'airingNow': 'Celebrity Showdown',
+    'isPremium': true,
+    'viewCount': 19200,
+  },
+  {
+    'title': 'Movie Central',
+    'subtitle': 'Blockbuster Movies',
+    'network': 'FilmStream',
+    'channelInitial': 'FS',
+    'networkColor': Colors.green,
+    'airingNow': 'Action Classics',
+    'isPremium': false,
+    'viewCount': 11900,
+  },
+].obs;
+
 //tv channel lsit
 
 }

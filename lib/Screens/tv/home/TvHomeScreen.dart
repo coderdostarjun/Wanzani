@@ -27,32 +27,32 @@ class Tvhomescreen extends StatelessWidget {
             child: Column(
               children: [
                 //navbar container
-                Container(
-                  child: Row(
-                    children: [
-                      Text(
-                        "Home",
-                        style: AppTextStyles.withColor(
-                            AppTextStyles.heading1Small18, Color(0xff14A0DD)),
-                      ),
-                      Spacer(),
-                      GestureDetector(
-                          onTap: () {
-                            Get.to(() => SearchScreen());
-                          },
-                          child: Image.asset(searchIcon)),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      GestureDetector(
-                          onTap: () {
-                            Get.to(() => MessageScreen());
-                          },
-                          child:
-                              Image.asset("assets/images/messageButton.png")),
-                    ],
-                  ),
-                ),
+                // Container(
+                //   child: Row(
+                //     children: [
+                //       Text(
+                //         "Home",
+                //         style: AppTextStyles.withColor(
+                //             AppTextStyles.heading1Small18, Color(0xff14A0DD)),
+                //       ),
+                //       Spacer(),
+                //       GestureDetector(
+                //           onTap: () {
+                //             Get.to(() => SearchScreen());
+                //           },
+                //           child: Image.asset(searchIcon)),
+                //       SizedBox(
+                //         width: 12,
+                //       ),
+                //       GestureDetector(
+                //           onTap: () {
+                //             Get.to(() => MessageScreen());
+                //           },
+                //           child:
+                //               Image.asset("assets/images/messageButton.png")),
+                //     ],
+                //   ),
+                // ),
 
                 SizedBox(
                   height: 12,

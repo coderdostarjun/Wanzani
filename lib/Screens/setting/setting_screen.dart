@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wanzani/Screens/home/home_screen.dart';
+import 'package:wanzani/Screens/home/home_screens.dart';
+import 'package:wanzani/Screens/setting/personal_information.dart';
 import 'package:wanzani/Screens/setting/widget/setting_container.dart';
 import 'package:get/get.dart';
 import 'package:wanzani/Screens/splash/widgets/custom_button.dart';
@@ -42,12 +44,11 @@ class SettingScreen extends StatelessWidget {
               SizedBox(
                 height: 22,
               ),
-              InkWell(
-                  onTap: () => HomeScreen(),
-                  child: GestureDetector(
-                      // onTap: ()=>(Get.to(()=>HomeScreen())),
+
+                   GestureDetector(
+                      onTap: () => Get.to(() => PersonalInformation()),
                       child: settingContainer("assets/images/personaINfo.png",
-                          "Personal Information"))),
+                          "Personal Information")),
               SizedBox(
                 height: 10,
               ),
@@ -133,7 +134,7 @@ class SettingScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             InkWell(
-                onTap: () => Get.to(() => HomeScreen()),
+                onTap: () => Get.offAll(() => HomeScreens()),
                 child: Image.asset("assets/images/bottomnavHome.png")),
             InkWell(
                 onTap: () => Get.to(() => SearchScreen()),

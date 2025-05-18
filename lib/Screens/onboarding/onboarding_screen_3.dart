@@ -16,57 +16,58 @@ class OnboardingScreen3 extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(30),
           margin: EdgeInsets.only(top:30 ),
-          child: Column(
-            children: [
-              OnboardingCommonHeader(),
-              SizedBox(height: 1,),
-              OnboardingCommonWidget.ImageAvatar(),
-              OnboardingCommonWidget.personalDetail(heading: "Get Started",
-                  subHeading: "Create your account or login to start\n   connecting with your community."),
-              SizedBox(height: 50,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 10,
-                    height: 8,
-                    child: CircleAvatar(backgroundColor:Color(0xffd1d5db),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                OnboardingCommonHeader(),
+                SizedBox(height: 1,),
+                OnboardingCommonWidget.ImageAvatar(),
+                OnboardingCommonWidget.personalDetail(heading: "Get Started",
+                    subHeading: "Create your account or login to start\n   connecting with your community."),
+                SizedBox(height: 50,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 10,
+                      height: 8,
+                      child: CircleAvatar(backgroundColor:Color(0xffd1d5db),
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 3,),
-                  Container(
-                    width: 10,
-                    height: 8,
-                    child: CircleAvatar(backgroundColor:Color(0xffd1d5db),
+                    SizedBox(width: 3,),
+                    Container(
+                      width: 10,
+                      height: 8,
+                      child: CircleAvatar(backgroundColor:Color(0xffd1d5db),
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 3,),
-                  Container(
-                    height: 8,
-                    width: MediaQuery.of(context).size.width/12,
-                    decoration:BoxDecoration(
-                        color: Color(0xff00B0E7),
-                        border: Border.all(
+                    SizedBox(width: 3,),
+                    Container(
+                      height: 8,
+                      width: MediaQuery.of(context).size.width/12,
+                      decoration:BoxDecoration(
                           color: Color(0xff00B0E7),
-                        ),
-                        borderRadius: BorderRadius.circular(6)
+                          border: Border.all(
+                            color: Color(0xff00B0E7),
+                          ),
+                          borderRadius: BorderRadius.circular(6)
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 30,),
-            Expanded(
-              child: CustomButton(onpressed: ()
-              {
-                Get.to(CreateAccountScreen());
-              },color: Color(0xffEAEAEA), btnName: 'Create Account',textColor: Colors.black,),
+                  ],
+                ),
+                SizedBox(height: 30,),
+
+                 CustomButton(onpressed: ()
+                {
+                  Get.to(CreateAccountScreen());
+                },color: Color(0xffEAEAEA), btnName: 'Create Account',textColor: Colors.black,),
+              SizedBox(height: 20,),
+                 CustomButton(onpressed: ()
+                {
+                  Get.to(LoginScreeen());
+                },color: Color(0xff14A0DD), btnName: 'Login'),
+              ],
             ),
-            SizedBox(height: 20,),
-              Expanded(child: CustomButton(onpressed: ()
-              {
-                Get.to(LoginScreeen());
-              },color: Color(0xff14A0DD), btnName: 'Login')),
-            ],
           ),
         ),
       ) ,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class OnboardingCommonWidget
 {
 
@@ -22,9 +23,14 @@ class OnboardingCommonWidget
       padding: EdgeInsets.all(3),
       child: Column(
         children: [
-          Center(child: Text(heading,style: TextStyle(fontWeight: FontWeight.w600,fontSize:36,color: Color(0xff00B0E7), ),)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(child: Text(heading,style: TextStyle(fontWeight: FontWeight.w600,fontSize:28.sp,color: Color(0xff00B0E7), ),)),
+            ],
+          ),
           SizedBox(height: 18,),
-          Text(subHeading,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400,),)
+          Text(subHeading,style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.w400,),)
         ],
       ),
     );

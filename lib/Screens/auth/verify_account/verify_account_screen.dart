@@ -3,6 +3,7 @@ import 'package:wanzani/Common%20Components/AppTextStyles.dart';
 import 'package:wanzani/Screens/auth/create_account/create_account_screen.dart';
 import 'package:wanzani/Screens/auth/widget/verificationNumberRow.dart';
 import 'package:wanzani/Screens/home/home_screen.dart';
+import 'package:wanzani/Screens/home/home_screens.dart';
 import 'package:wanzani/Screens/splash/widgets/custom_button.dart';
 import 'package:get/get.dart';
 import '../../../consts/colors.dart';
@@ -65,7 +66,7 @@ class VerifyAccountScreen extends StatelessWidget {
             ),
             SizedBox(height: 20,),
             CustomButton(onpressed: (){
-              Get.to(()=>HomeScreen());
+              Get.offAll(()=>HomeScreens());
             }, color: darkprimaryColor, btnName: "Confirm"),
                 SizedBox(height: 20,),
                 CustomButton(onpressed: (){}, btnName: "Resend", color: Colors.white,lineargradeint: LinearGradient(

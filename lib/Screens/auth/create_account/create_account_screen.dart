@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -30,7 +31,7 @@ class CreateAccountScreen extends StatelessWidget {
           icon: Icon(
             Icons.keyboard_arrow_left,
             color: Color(0xff252525),
-            size: 30,
+            size: 30.sp,
           ), onPressed: () {
             Get.to(()=>OnboardingScreen3());
         },
@@ -39,37 +40,37 @@ class CreateAccountScreen extends StatelessWidget {
         title: Center(
             child: Image.asset(
           logo1,
-          height: 31,
-          width: 194,
+          height: 31.h,
+          width: 194.w,
         )),
       ),
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(20.w),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 30,
+                height: 30.h,
               ),
               //welcome content
               authInfo(
                   "Create Account!", "Please enter your details to proceed "),
               //email or phone number textfield
               SizedBox(
-                height: 15.0,
+                height: 15.0.h,
               ),
               commonTextField1(firstName, "FirstName"),
               SizedBox(
-                height: 15.0,
+                height: 15.0.h,
               ),
               commonTextField1(lastName, "Last Name"),
               SizedBox(
-                height: 15.0,
+                height: 15.0.h,
               ),
               commonTextField1(email, "Email",textInputype: TextInputType.emailAddress),
               SizedBox(
-                height: 15.0,
+                height: 15.0.h,
               ),
 
               SingleChildScrollView(
@@ -78,18 +79,18 @@ class CreateAccountScreen extends StatelessWidget {
                   children: [
                     commonTextField1(code, "Code", size: 90,textInputype: TextInputType.number),
                     SizedBox(
-                      width: 10,
+                      width: 10.w,
                     ),
                     commonTextField1(phoneNumber, "Phone Number", size: 271,textInputype: TextInputType.number),
                   ],
                 ),
               ),
               SizedBox(
-                height: 15.0,
+                height: 15.0.h,
               ),
               //password TexField
               SizedBox(
-                width: 400,
+                width: 400.w,
                 child: TextField(
                   controller: enterPassword,
                   decoration: InputDecoration(
@@ -111,13 +112,14 @@ class CreateAccountScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 15.0,
+                height: 15.0.h,
               ),
 
               SizedBox(
-                height: 15,
+                height: 15.h,
               ),
               Obx(() => SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
                     Checkbox(

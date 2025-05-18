@@ -207,7 +207,7 @@ class TrendingVideoContainer extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ), // Your defined widget
+                  ),
                 );
               },
             ),

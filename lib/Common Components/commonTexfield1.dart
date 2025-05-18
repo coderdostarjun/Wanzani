@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Common Components/AppTextStyles.dart';
 import '../../../consts/colors.dart';
 Widget commonTextField1(controllerName,hintText,{double? size, TextInputType? textInputype})
 {
   return   SizedBox(
-    width:size??400,
+    width:size??400.w,
     child: TextField(
       controller: controllerName,
       decoration: InputDecoration(

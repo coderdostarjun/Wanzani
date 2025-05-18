@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wanzani/Common%20Components/AppTextStyles.dart';
 import 'package:wanzani/Screens/comment/comment_screen.dart';
+import 'package:wanzani/Screens/profile/profile_screen.dart';
 import 'package:wanzani/Screens/setting/setting_screen.dart';
 import 'package:wanzani/consts/colors.dart';
 import 'package:wanzani/consts/images.dart';
@@ -9,8 +10,9 @@ import '../../../Controllers/home/home_screen_controllers.dart';
 import 'package:get/get.dart';
 
 class CustomUserPosts extends StatelessWidget {
-  const CustomUserPosts({super.key});
 
+  const CustomUserPosts({super.key, this.textColor,});
+    final Color? textColor;
   @override
   Widget build(BuildContext context) {
     final HomeScreenControllers controller = Get.put(HomeScreenControllers());
@@ -27,10 +29,11 @@ class CustomUserPosts extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(
-                          backgroundImage:
-                              AssetImage(controller.userPost[index]["image"]),
-                          radius: 20,
+                           CircleAvatar(
+                            backgroundImage:
+                                AssetImage(controller.userPost[index]["image"]),
+                            radius: 20,
+
                         ),
                         SizedBox(width: 22),
                         Column(
@@ -40,13 +43,13 @@ class CustomUserPosts extends StatelessWidget {
                               controller.userPost[index]["name"],
                               style: AppTextStyles.withColor(
                                   AppTextStyles.robotoSemiBold16,
-                                  Color(0xff1F2937)),
+                                  textColor??Color(0xff1F2937)),
                             ),
                             SizedBox(width: 14),
                             Text(
                               controller.userPost[index]["time"],
                               style: AppTextStyles.withColor(
-                                  AppTextStyles.robotoRegular14, textGray),
+                                  AppTextStyles.robotoRegular14,textColor??textGray),
                             ),
                           ],
                         ),
@@ -64,7 +67,7 @@ class CustomUserPosts extends StatelessWidget {
                             controller.userPost[index]["content"],
                             style: AppTextStyles.withColor(
                                 AppTextStyles.robotoRegular16,
-                                Color(0xff1F2937)),
+                                textColor??Color(0xff1F2937)),
                           ),
                           Text(
                             controller.userPost[index]["hashtag"],
@@ -87,16 +90,22 @@ class CustomUserPosts extends StatelessWidget {
                       children: [
                         Icon(Icons.favorite_border_outlined,color: Color(0xff6B7280),),
                         SizedBox(width: 4),
-                        Text(controller.userPost[index]["like"],style: TextStyle(fontSize:16,color:Color(0xff6B7280),),),
+                        Text(controller.userPost[index]["like"],style: TextStyle(fontSize:16,color:textColor??Color(0xff6B7280),),),
                         SizedBox(width: 16),
-                        Image.asset(chatIcon),
                         InkWell(
                           onTap:()=>Get.to(()=>CommentScreen()),
-                            child: Text(controller.userPost[index]["comment"],style: TextStyle(fontSize:16,color:Color(0xff6B7280),),)),
+                          child: Row(
+                            children: [
+                              Image.asset(chatIcon),
+                              Text(controller.userPost[index]["comment"],style: TextStyle(fontSize:16,color:textColor??Color(0xff6B7280),),),
+                            ],
+                          ),
+                        ),
+
                         Spacer(),
                         Icon(Icons.share,color: Color(0xff6B7280),),
                         SizedBox(width: 4,),
-                        Text('Share',style: TextStyle(fontSize:16,color:Color(0xff6B7280),),),
+                        Text('Share',style: TextStyle(fontSize:16,color:textColor??Color(0xff6B7280),),),
                       ],
                     ),
                     SizedBox(height: 24,),

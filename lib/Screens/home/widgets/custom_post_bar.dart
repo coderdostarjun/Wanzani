@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:wanzani/Common%20Components/AppTextStyles.dart';
 import 'package:wanzani/consts/colors.dart';
 import 'package:wanzani/consts/images.dart';
+import 'package:get/get.dart';
+
+import '../../profile/profile_screen.dart';
 Widget customPostBar(controllerName)
 {
   // TextEditingController whatIsonYourMin=TextEditingController();
@@ -13,7 +16,9 @@ return Container(
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            Image.asset("assets/images/User55.png",height: 43,width: 55,),
+            InkWell(
+                onTap: ()=>Get.to(()=>ProfilScreen()),
+                child: Image.asset("assets/images/User55.png",height: 43,width: 55,)),
             SizedBox(width: 12,),
             Container(
               width:300,
@@ -50,21 +55,24 @@ return Container(
           color: Color(0xff6B7280),
         ),
         SizedBox(height: 20,),
-        Row(
-          children: [
-            SizedBox(width: 32,),
-            Image.asset(imageIcon),
-            SizedBox(width: 10,),
-            Text("Photo",style: AppTextStyles.withColor(AppTextStyles.buttonLarge16, Color(0xff6B7280)),),
-            SizedBox(width: 42,),
-            Image.asset(videoIcon),
-            SizedBox(width: 10,),
-            Text("Video",style: AppTextStyles.withColor(AppTextStyles.buttonLarge16, Color(0xff6B7280)),),
-            SizedBox(width: 42,),
-            Image.asset(locationIcon),
-            SizedBox(width: 10,),
-            Text("Location",style: AppTextStyles.withColor(AppTextStyles.buttonLarge16, Color(0xff6B7280)),)
-          ],
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              SizedBox(width: 32,),
+              Image.asset(imageIcon),
+              SizedBox(width: 10,),
+              Text("Photo",style: AppTextStyles.withColor(AppTextStyles.buttonLarge16, Color(0xff6B7280)),),
+              SizedBox(width: 42,),
+              Image.asset(videoIcon),
+              SizedBox(width: 10,),
+              Text("Video",style: AppTextStyles.withColor(AppTextStyles.buttonLarge16, Color(0xff6B7280)),),
+              SizedBox(width: 42,),
+              Image.asset(locationIcon),
+              SizedBox(width: 10,),
+              Text("Location",style: AppTextStyles.withColor(AppTextStyles.buttonLarge16, Color(0xff6B7280)),)
+            ],
+          ),
         )
   ],
     )
